@@ -37,7 +37,7 @@ class Cracker:
 
         for x_hashed_md5 in self.md5file_hashed_md5:
             if hashlib.md5(x_hashed_md5.strip().encode('utf-8')).hexdigest() == self.hashed_password.strip():
-                print(f"Match {x_hashed_md5.strip()} :  {self.hashed_password}")
+                print(f"Match  -  {x_hashed_md5.strip()}  :  {self.hashed_password}")
                 self.exists_hashed_md5 = True
                 return
 
@@ -52,7 +52,7 @@ class Cracker:
 
         for x_hashed_sha1 in self.sha1file_hashed_sha1:
             if hashlib.sha1(x_hashed_sha1.strip().encode('utf-8')).hexdigest() == self.hashed_password.strip():
-                print(f"Match {x_hashed_sha1.strip()} :  {self.hashed_password}")
+                print(f"Match  -  {x_hashed_sha1.strip()}  :  {self.hashed_password}")
                 self.exists_hashed_sha1 = True
                 return
 
@@ -67,7 +67,7 @@ class Cracker:
 
         for x_hashed_sha256 in self.sha256file_hashed_sha256:
             if hashlib.sha256(x_hashed_sha256.strip().encode('utf-8')).hexdigest() == self.hashed_password.strip():
-                print(f"Match {x_hashed_sha256.strip()} :  {self.hashed_password}")
+                print(f"Match  -  {x_hashed_sha256.strip()}  :  {self.hashed_password}")
                 self.exists_hashed_sha256 = True
                 return
 
@@ -82,7 +82,7 @@ class Cracker:
 
         for x_hashed_sha512 in self.sha512file_hashed_sha512:
             if hashlib.sha512(x_hashed_sha512.strip().encode('utf-8')).hexdigest() == self.hashed_password.strip():
-                print(f"Match {x_hashed_sha512.strip()} :  {self.hashed_password}")
+                print(f"Match  -  {x_hashed_sha512.strip()}  :  {self.hashed_password}")
                 self.exists_hashed_sha512 = True
                 return
 
