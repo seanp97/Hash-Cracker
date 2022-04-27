@@ -2,7 +2,7 @@ Python Hash Cracker - By Sean Pelser
 
 Make sure you have the rockyou.txt file in the same folder as the python file or you can use own as the third argument
 
-Two arguments and one optional arguement:
+Two arguments and one optional argument:
 ▼▼▼
 
 {HashMethod} {hashed_password} {file_name} - Optional if you want to use own password list - if no argument, will default to rockyou.txt password list
