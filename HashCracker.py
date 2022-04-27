@@ -67,6 +67,7 @@ class Cracker:
                 print(f"MATCH  -  {x_hashed_md5.strip()}  :  {self.hashed_password}")
                 print("")
                 print("▼▼▼")
+                print("")
                 self.exists_hashed_md5 = True
                 return
 
@@ -86,6 +87,7 @@ class Cracker:
                 print(f"MATCH  -  {x_hashed_sha1.strip()}")
                 print("")
                 print("▼▼▼")
+                print("")
                 print(self.hashed_password)
                 self.exists_hashed_sha1 = True
                 return
@@ -105,6 +107,7 @@ class Cracker:
                 print(f"MATCH  -  {x_hashed_sha224.strip()}")
                 print("")
                 print("▼▼▼")
+                print("")
                 print(self.hashed_password)
                 self.exists_hashed_shav = True
                 return
@@ -125,6 +128,7 @@ class Cracker:
                 print(f"MATCH  -  {x_hashed_sha256.strip()}")
                 print("")
                 print("▼▼▼")
+                print("")
                 print(self.hashed_password)
                 self.exists_hashed_sha256 = True
                 return
@@ -145,6 +149,7 @@ class Cracker:
                 print(f"MATCH  -  {x_hashed_sha512.strip()}")
                 print("")
                 print("▼▼▼")
+                print("")
                 print(self.hashed_password)
                 self.exists_hashed_sha512 = True
                 return
@@ -164,6 +169,7 @@ class Cracker:
                 print(f"MATCH  -  {x_hashed_blake2b.strip()}")
                 print("")
                 print("▼▼▼")
+                print("")
                 print(self.hashed_password)
                 self.exists_hashed_blake2b = True
                 return
@@ -183,6 +189,7 @@ class Cracker:
                 print(f"MATCH  -  {x_hashed_blake2s.strip()}")
                 print("")
                 print("▼▼▼")
+                print("")
                 print(self.hashed_password)
                 self.exists_hashed_blake2s = True
                 return
