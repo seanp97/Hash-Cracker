@@ -23,7 +23,7 @@ class Cracker:
 
             self.password_list = ""
             if len(sys.argv) > 3:
-                print(sys.argv[3])
+                self.password_list = sys.argv[3]
             else:
                 self.password_list = "rockyou.txt"
 
