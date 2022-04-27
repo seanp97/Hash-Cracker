@@ -5,54 +5,51 @@ class Cracker:
 
     def __init__(self):   
 
-        if sys.argv[1] != "":
+        if len(sys.argv) > 1:
 
-            try:
+            print("  ___ ___               .__    _________                       __                 ")
+            print(" /   |   \_____    _____|  |__ \_   ___ \____________    ____ |  | __ ___________") 
+            print("/    ~    \__  \  /  ___/  |  \/    \  \/\_  __ \__  \ _/ ___\|  |/ // __ \_  __ \\")
+            print("\    Y    // __ \_\___ \|   Y  \     \____|  | \// __ \\  \___|    <\  ___/|  | \/")
+            print(" \___|_  /(____  /____  >___|  /\______  /|__|  (____  /\___  >__|_ \\___  >__|   ")
+            print("       \/      \/     \/     \/        \/            \/     \/     \/    \/       ")
 
-                print("  ___ ___               .__    _________                       __                 ")
-                print(" /   |   \_____    _____|  |__ \_   ___ \____________    ____ |  | __ ___________") 
-                print("/    ~    \__  \  /  ___/  |  \/    \  \/\_  __ \__  \ _/ ___\|  |/ // __ \_  __ \\")
-                print("\    Y    // __ \_\___ \|   Y  \     \____|  | \// __ \\  \___|    <\  ___/|  | \/")
-                print(" \___|_  /(____  /____  >___|  /\______  /|__|  (____  /\___  >__|_ \\___  >__|   ")
-                print("       \/      \/     \/     \/        \/            \/     \/     \/    \/       ")
+            print("")
+            print("")
 
-                print("")
-                print("")
+            self.hash_choice = sys.argv[1]
 
-                self.hash_choice = sys.argv[1]
+            self.hashed_password = sys.argv[2]
 
-                self.hashed_password = sys.argv[2]
-
+            self.password_list = ""
+            if len(sys.argv) > 3:
+                print(sys.argv[3])
+            else:
                 self.password_list = "rockyou.txt"
-                if len(sys.argv[3]) > 1:
-                    self.password_list = sys.argv[3]
 
-                if self.hash_choice.lower() == "md5":
-                    self.Cracker_hashed_md5()
+            if self.hash_choice.lower() == "md5":
+                self.Cracker_hashed_md5()
 
-                elif self.hash_choice.lower() == "sha1":
-                    self.Cracker_hashed_sha1()
+            elif self.hash_choice.lower() == "sha1":
+                self.Cracker_hashed_sha1()
 
-                elif self.hash_choice.lower() == "sha224":
-                    self.Cracker_hashed_sha224()
+            elif self.hash_choice.lower() == "sha224":
+                self.Cracker_hashed_sha224()
 
-                elif self.hash_choice.lower() == "sha256":
-                    self.Cracker_hashed_sha256()
+            elif self.hash_choice.lower() == "sha256":
+                self.Cracker_hashed_sha256()
 
-                elif self.hash_choice.lower() == "sha512":
-                    self.Cracker_hashed_sha512()
+            elif self.hash_choice.lower() == "sha512":
+                self.Cracker_hashed_sha512()
 
-                elif self.hash_choice.lower() == "blake2b":
-                    self.Cracker_hashed_blake2b()
+            elif self.hash_choice.lower() == "blake2b":
+                self.Cracker_hashed_blake2b()
 
-                elif self.hash_choice.lower() == "blake2s":
-                    self.Cracker_hashed_blake2s()
+            elif self.hash_choice.lower() == "blake2s":
+                self.Cracker_hashed_blake2s()
 
-                else:
-                    print("Not a valid hash method")
-
-            except:
-                print("There was an error")
+            else:
+                print("Not a valid hash method")
 
         else:
             print("Choose a hashing method")
