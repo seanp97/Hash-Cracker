@@ -5,7 +5,7 @@ Make sure you have the rockyou.txt file in the same folder as the python file or
 Two arguments and one optional arguement:
 ▼▼▼
 
-{HashMethod} {hashed_password} {file_name} - Optional if you want to use onw password list - if no argument will default to rockyou.txt password list
+{HashMethod} {hashed_password} {file_name} - Optional if you want to use own password list - if no argument will default to rockyou.txt password list
 
 ----------------------------------------------------
 
