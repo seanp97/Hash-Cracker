@@ -7,43 +7,52 @@ class Cracker:
 
         if sys.argv[1] != "":
 
-            print("  ___ ___               .__    _________                       __                 ")
-            print(" /   |   \_____    _____|  |__ \_   ___ \____________    ____ |  | __ ___________") 
-            print("/    ~    \__  \  /  ___/  |  \/    \  \/\_  __ \__  \ _/ ___\|  |/ // __ \_  __ \\")
-            print("\    Y    // __ \_\___ \|   Y  \     \____|  | \// __ \\  \___|    <\  ___/|  | \/")
-            print(" \___|_  /(____  /____  >___|  /\______  /|__|  (____  /\___  >__|_ \\___  >__|   ")
-            print("       \/      \/     \/     \/        \/            \/     \/     \/    \/       ")
+            try:
 
-            print("")
-            print("")
+                print("  ___ ___               .__    _________                       __                 ")
+                print(" /   |   \_____    _____|  |__ \_   ___ \____________    ____ |  | __ ___________") 
+                print("/    ~    \__  \  /  ___/  |  \/    \  \/\_  __ \__  \ _/ ___\|  |/ // __ \_  __ \\")
+                print("\    Y    // __ \_\___ \|   Y  \     \____|  | \// __ \\  \___|    <\  ___/|  | \/")
+                print(" \___|_  /(____  /____  >___|  /\______  /|__|  (____  /\___  >__|_ \\___  >__|   ")
+                print("       \/      \/     \/     \/        \/            \/     \/     \/    \/       ")
 
-            self.hash_choice = sys.argv[1]
+                print("")
+                print("")
 
-            self.hashed_password = sys.argv[2]
+                self.hash_choice = sys.argv[1]
 
-            if self.hash_choice.lower() == "md5":
-                self.Cracker_hashed_md5()
+                self.hashed_password = sys.argv[2]
 
-            elif self.hash_choice.lower() == "sha1":
-                self.Cracker_hashed_sha1()
+                self.password_list = "rockyou.txt"
+                if len(sys.argv[3]) > 1:
+                    self.password_list = sys.argv[3]
 
-            elif self.hash_choice.lower() == "sha224":
-                self.Cracker_hashed_sha224()
+                if self.hash_choice.lower() == "md5":
+                    self.Cracker_hashed_md5()
 
-            elif self.hash_choice.lower() == "sha256":
-                self.Cracker_hashed_sha256()
+                elif self.hash_choice.lower() == "sha1":
+                    self.Cracker_hashed_sha1()
 
-            elif self.hash_choice.lower() == "sha512":
-                self.Cracker_hashed_sha512()
+                elif self.hash_choice.lower() == "sha224":
+                    self.Cracker_hashed_sha224()
 
-            elif self.hash_choice.lower() == "blake2b":
-                self.Cracker_hashed_blake2b()
+                elif self.hash_choice.lower() == "sha256":
+                    self.Cracker_hashed_sha256()
 
-            elif self.hash_choice.lower() == "blake2s":
-                self.Cracker_hashed_blake2s()
+                elif self.hash_choice.lower() == "sha512":
+                    self.Cracker_hashed_sha512()
 
-            else:
-                print("Not a valid hash method")
+                elif self.hash_choice.lower() == "blake2b":
+                    self.Cracker_hashed_blake2b()
+
+                elif self.hash_choice.lower() == "blake2s":
+                    self.Cracker_hashed_blake2s()
+
+                else:
+                    print("Not a valid hash method")
+
+            except:
+                print("There was an error")
 
         else:
             print("Choose a hashing method")
@@ -53,7 +62,7 @@ class Cracker:
     def Cracker_hashed_md5(self):
         print("Cracking...")
         print("")
-        self.md5file_hashed_md5 = open("rockyou.txt", "r", encoding="ISO-8859-1")
+        self.md5file_hashed_md5 = open(f"{self.password_list}", "r", encoding="ISO-8859-1")
         self.exists_hashed_md5 = False
 
         for x_hashed_md5 in self.md5file_hashed_md5:
@@ -72,7 +81,7 @@ class Cracker:
     def Cracker_hashed_sha1(self):
         print("Cracking...")
         print("")
-        self.sha1file_hashed_sha1 = open("rockyou.txt", "r", encoding="ISO-8859-1")
+        self.sha1file_hashed_sha1 = open(f"{self.password_list}", "r", encoding="ISO-8859-1")
         self.exists_hashed_sha1 = False
 
         for x_hashed_sha1 in self.sha1file_hashed_sha1:
@@ -91,7 +100,7 @@ class Cracker:
     def Cracker_hashed_sha224(self):
         print("Cracking...")
         print("")
-        self.sha224file_hashed_224 = open("rockyou.txt", "r", encoding="ISO-8859-1")
+        self.sha224file_hashed_224 = open(f"{self.password_list}", "r", encoding="ISO-8859-1")
         self.exists_hashed_sha224 = False
 
         for x_hashed_sha224 in self.sha224file_hashed_224:
@@ -111,7 +120,7 @@ class Cracker:
     def Cracker_hashed_sha256(self):
         print("Cracking...")
         print("")
-        self.sha256file_hashed_sha256 = open("rockyou.txt", "r", encoding="ISO-8859-1")
+        self.sha256file_hashed_sha256 = open(f"{self.password_list}", "r", encoding="ISO-8859-1")
         self.exists_hashed_sha256 = False
 
         for x_hashed_sha256 in self.sha256file_hashed_sha256:
@@ -131,7 +140,7 @@ class Cracker:
     def Cracker_hashed_sha512(self):
         print("Cracking...")
         print("")
-        self.sha512file_hashed_sha512 = open("rockyou.txt", "r", encoding="ISO-8859-1")
+        self.sha512file_hashed_sha512 = open(f"{self.password_list}", "r", encoding="ISO-8859-1")
         self.exists_hashed_sha512 = False
 
         for x_hashed_sha512 in self.sha512file_hashed_sha512:
@@ -150,7 +159,7 @@ class Cracker:
     def Cracker_hashed_blake2b(self):
         print("Cracking...")
         print("")
-        self.blake2bfile_hashed_blake2b = open("rockyou.txt", "r", encoding="ISO-8859-1")
+        self.blake2bfile_hashed_blake2b = open(f"{self.password_list}", "r", encoding="ISO-8859-1")
         self.exists_hashed_blake2b = False
 
         for x_hashed_blake2b in self.blake2bfile_hashed_blake2b:
@@ -169,7 +178,7 @@ class Cracker:
     def Cracker_hashed_blake2s(self):
         print("Cracking...")
         print("")
-        self.blake2sfile_hashed_blake2s = open("rockyou.txt", "r", encoding="ISO-8859-1")
+        self.blake2sfile_hashed_blake2s = open(f"{self.password_list}", "r", encoding="ISO-8859-1")
         self.exists_hashed_blake2s = False
 
         for x_hashed_blake2s in self.blake2sfile_hashed_blake2s:
