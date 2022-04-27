@@ -7,49 +7,54 @@ class Cracker:
 
         if len(sys.argv) > 1:
 
-            print("  ___ ___               .__    _________                       __                 ")
-            print(" /   |   \_____    _____|  |__ \_   ___ \____________    ____ |  | __ ___________") 
-            print("/    ~    \__  \  /  ___/  |  \/    \  \/\_  __ \__  \ _/ ___\|  |/ // __ \_  __ \\")
-            print("\    Y    // __ \_\___ \|   Y  \     \____|  | \// __ \\  \___|    <\  ___/|  | \/")
-            print(" \___|_  /(____  /____  >___|  /\______  /|__|  (____  /\___  >__|_ \\___  >__|   ")
-            print("       \/      \/     \/     \/        \/            \/     \/     \/    \/       ")
+            try:
 
-            print("")
-            print("")
+                print("  ___ ___               .__    _________                       __                 ")
+                print(" /   |   \_____    _____|  |__ \_   ___ \____________    ____ |  | __ ___________") 
+                print("/    ~    \__  \  /  ___/  |  \/    \  \/\_  __ \__  \ _/ ___\|  |/ // __ \_  __ \\")
+                print("\    Y    // __ \_\___ \|   Y  \     \____|  | \// __ \\  \___|    <\  ___/|  | \/")
+                print(" \___|_  /(____  /____  >___|  /\______  /|__|  (____  /\___  >__|_ \\___  >__|   ")
+                print("       \/      \/     \/     \/        \/            \/     \/     \/    \/       ")
 
-            self.hash_choice = sys.argv[1]
+                print("")
+                print("")
 
-            self.hashed_password = sys.argv[2]
+                self.hash_choice = sys.argv[1]
 
-            self.password_list = ""
-            if len(sys.argv) > 3:
-                self.password_list = sys.argv[3]
-            else:
-                self.password_list = "rockyou.txt"
+                self.hashed_password = sys.argv[2]
 
-            if self.hash_choice.lower() == "md5":
-                self.Cracker_hashed_md5()
+                self.password_list = ""
+                if len(sys.argv) > 3:
+                    self.password_list = sys.argv[3]
+                else:
+                    self.password_list = "rockyou.txt"
 
-            elif self.hash_choice.lower() == "sha1":
-                self.Cracker_hashed_sha1()
+                if self.hash_choice.lower() == "md5":
+                    self.Cracker_hashed_md5()
 
-            elif self.hash_choice.lower() == "sha224":
-                self.Cracker_hashed_sha224()
+                elif self.hash_choice.lower() == "sha1":
+                    self.Cracker_hashed_sha1()
 
-            elif self.hash_choice.lower() == "sha256":
-                self.Cracker_hashed_sha256()
+                elif self.hash_choice.lower() == "sha224":
+                    self.Cracker_hashed_sha224()
 
-            elif self.hash_choice.lower() == "sha512":
-                self.Cracker_hashed_sha512()
+                elif self.hash_choice.lower() == "sha256":
+                    self.Cracker_hashed_sha256()
 
-            elif self.hash_choice.lower() == "blake2b":
-                self.Cracker_hashed_blake2b()
+                elif self.hash_choice.lower() == "sha512":
+                    self.Cracker_hashed_sha512()
 
-            elif self.hash_choice.lower() == "blake2s":
-                self.Cracker_hashed_blake2s()
+                elif self.hash_choice.lower() == "blake2b":
+                    self.Cracker_hashed_blake2b()
 
-            else:
-                print("Not a valid hash method")
+                elif self.hash_choice.lower() == "blake2s":
+                    self.Cracker_hashed_blake2s()
+
+                else:
+                    print("Not a valid hash method")
+
+            except:
+                print("An error occured")
 
         else:
             print("Choose a hashing method")
